@@ -65,7 +65,7 @@ router.patch('/users/me',auth,async (req, res)=>{
     const validFields = updates.every((update) => validUpdates.includes(update));
 
     if(!validFields){
-        return res.send({error:'Invalid Updates'});
+        return res.status(400).send({error:'Invalid Updates'});
     }
 
     try{
